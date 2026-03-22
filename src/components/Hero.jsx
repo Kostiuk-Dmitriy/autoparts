@@ -36,34 +36,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* SVG Illustration */}
-          <div className="hidden lg:flex justify-center hover:scale-105 transition-transform duration-500">
-            <svg viewBox="0 0 400 300" className="w-full max-w-md drop-shadow-2xl" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="60" y="150" width="280" height="90" rx="20" fill="url(#car-grad)" />
-              <path d="M100 150 L140 100 L260 100 L300 150Z" fill="#A5D7E8" />
-              <rect x="150" y="110" width="45" height="35" rx="5" fill="#CFE8F2" />
-              <rect x="205" y="110" width="45" height="35" rx="5" fill="#CFE8F2" />
-              <circle cx="130" cy="240" r="35" fill="#0B2447" className="animate-[spin_4s_linear_infinite]" style={{transformOrigin: '130px 240px'}}/>
-              <circle cx="130" cy="240" r="15" fill="#CFE8F2" />
-              <circle cx="270" cy="240" r="35" fill="#0B2447" className="animate-[spin_4s_linear_infinite]" style={{transformOrigin: '270px 240px'}}/>
-              <circle cx="270" cy="240" r="15" fill="#CFE8F2" />
-              <rect x="60" y="165" width="20" height="10" rx="5" fill="#FCD34D" />
-              <rect x="320" y="165" width="20" height="10" rx="5" fill="#FCD34D" />
-              <circle cx="50" cy="80" r="24" fill="white" className="animate-bounce drop-shadow-md" style={{animationDelay: '0.1s'}} />
-              <text x="50" y="86" textAnchor="middle" fontSize="16">⚙️</text>
-              <circle cx="350" cy="60" r="22" fill="white" className="animate-bounce drop-shadow-md" style={{animationDelay: '0.3s'}} />
-              <text x="350" y="66" textAnchor="middle" fontSize="14">🔧</text>
-              <circle cx="370" cy="140" r="20" fill="white" className="animate-bounce drop-shadow-md" style={{animationDelay: '0.2s'}} />
-              <text x="370" y="146" textAnchor="middle" fontSize="12">🛞</text>
-              <circle cx="30" cy="160" r="20" fill="white" className="animate-bounce drop-shadow-md" style={{animationDelay: '0.4s'}} />
-              <text x="30" y="166" textAnchor="middle" fontSize="12">🔩</text>
-              <defs>
-                <linearGradient id="car-grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#576CBC" />
-                  <stop offset="100%" stopColor="#19376D" />
-                </linearGradient>
-              </defs>
-            </svg>
+          {/* Image Illustration */}
+          <div className="hidden lg:flex flex-col items-center justify-center group w-full">
+            {/* Foreground Car */}
+            <img 
+              src="/hero-car.png" 
+              alt="AutoParts Car" 
+              className="relative z-10 w-full max-w-[480px] object-contain drop-shadow-[0_20px_40px_rgba(11,36,71,0.25)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-500" 
+            />
+            {/* Text Underneath (Wheels specifically overlapping the letters) */}
+            <h2 className="relative z-0 -mt-36 lg:-mt-44 text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0B2447] to-[#576CBC] tracking-[0.1em] uppercase drop-shadow-sm transition-transform duration-500 select-none whitespace-nowrap">
+              AutoParts
+            </h2>
           </div>
         </div>
       </div>
