@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Phone, Send, Instagram } from 'lucide-react'
 
-export default function ContactForm() {
+const PHONE_PATTERN = /^\+?[\d\s\-()]{7,20}$/
+
+export default function ContactForm({ prefilledPart, onPartChange }) {
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -9,13 +11,31 @@ export default function ContactForm() {
     part: '',
     contact: 'viber',
   })
+  const [phoneError, setPhoneError] = useState('')
+
+  useEffect(() => {
+    if (prefilledPart) {
+      setForm((prev) => ({ ...prev, part: prefilledPart }))
+    }
+  }, [prefilledPart])
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
+    if (name === 'phone') {
+      setPhoneError('')
+    }
+    if (name === 'part' && onPartChange) {
+      onPartChange(value)
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!PHONE_PATTERN.test(form.phone)) {
+      setPhoneError('Введіть коректний номер телефону')
+      return
+    }
     const text = encodeURIComponent(
       `Нова заявка!\nІм'я: ${form.name}\nТелефон: ${form.phone}\nАвто: ${form.car}\nДеталь: ${form.part}\nСпосіб зв'язку: ${form.contact}`
     )
@@ -59,8 +79,11 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   placeholder="+380 xx xxx xx xx"
-                  className="w-full border border-[#E2E8F0] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2563EB] transition-colors"
+                  className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2563EB] transition-colors ${phoneError ? 'border-red-400' : 'border-[#E2E8F0]'}`}
                 />
+                {phoneError && (
+                  <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                )}
               </div>
             </div>
             <div className="mb-4">
@@ -79,7 +102,6 @@ export default function ContactForm() {
               <label className="block text-sm font-medium text-[#0F172A] mb-2">Потрібна деталь</label>
               <textarea
                 name="part"
-                id="part-field"
                 value={form.part}
                 onChange={handleChange}
                 required

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WhyUs from './components/WhyUs'
@@ -7,15 +8,25 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState('')
+
+  const handleCategorySelect = (categoryName) => {
+    setSelectedCategory(categoryName)
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="min-h-screen font-inter">
       <Navbar />
       <main>
         <Hero />
         <WhyUs />
-        <CatalogGrid />
+        <CatalogGrid onCategorySelect={handleCategorySelect} />
         <HowItWorks />
-        <ContactForm />
+        <ContactForm prefilledPart={selectedCategory} onPartChange={setSelectedCategory} />
       </main>
       <Footer />
       {/* Mobile floating call button */}

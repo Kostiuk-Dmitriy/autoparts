@@ -9,20 +9,9 @@ const categories = [
   { name: 'Оливи та рідини', emoji: '🛢️' },
 ]
 
-export default function CatalogGrid() {
+export default function CatalogGrid({ onCategorySelect }) {
   const handleCategoryClick = (categoryName) => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-      // Small delay to allow scroll, then focus/fill the part field
-      setTimeout(() => {
-        const partField = document.getElementById('part-field')
-        if (partField) {
-          partField.value = categoryName
-          partField.focus()
-        }
-      }, 600)
-    }
+    onCategorySelect(categoryName)
   }
 
   return (
