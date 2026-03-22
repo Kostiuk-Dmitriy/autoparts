@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Phone, Send, Instagram } from 'lucide-react'
 
 const PHONE_PATTERN = /^\+?[\d\s\-()]{7,20}$/
@@ -8,25 +8,19 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
     name: '',
     phone: '',
     car: '',
-    part: '',
     contact: 'viber',
   })
   const [phoneError, setPhoneError] = useState('')
 
-  useEffect(() => {
-    if (prefilledPart) {
-      setForm((prev) => ({ ...prev, part: prefilledPart }))
-    }
-  }, [prefilledPart])
-
   const handleChange = (e) => {
     const { name, value } = e.target
+    if (name === 'part') {
+      if (onPartChange) onPartChange(value)
+      return
+    }
     setForm((prev) => ({ ...prev, [name]: value }))
     if (name === 'phone') {
       setPhoneError('')
-    }
-    if (name === 'part' && onPartChange) {
-      onPartChange(value)
     }
   }
 
@@ -37,7 +31,7 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
       return
     }
     const text = encodeURIComponent(
-      `Нова заявка!\nІм'я: ${form.name}\nТелефон: ${form.phone}\nАвто: ${form.car}\nДеталь: ${form.part}\nСпосіб зв'язку: ${form.contact}`
+      `Нова заявка!\nІм'я: ${form.name}\nТелефон: ${form.phone}\nАвто: ${form.car}\nДеталь: ${prefilledPart || ''}\nСпосіб зв'язку: ${form.contact}`
     )
     window.open(`https://t.me/autoparts_boryspil?text=${text}`, '_blank')
   }
@@ -102,7 +96,7 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
               <label className="block text-sm font-medium text-[#0F172A] mb-2">Потрібна деталь</label>
               <textarea
                 name="part"
-                value={form.part}
+                value={prefilledPart || ''}
                 onChange={handleChange}
                 required
                 rows={3}
