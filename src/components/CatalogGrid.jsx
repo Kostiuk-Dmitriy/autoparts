@@ -15,13 +15,13 @@ export default function CatalogGrid({ onCategorySelect }) {
   }
 
   return (
-    <section id="catalog" className="py-20 bg-[#F8FAFC]">
+    <section id="catalog" className="py-20 bg-[#F4F9FB]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2447] mb-4">
             Категорії запчастин
           </h2>
-          <p className="text-[#64748B] text-lg max-w-xl mx-auto">
+          <p className="text-[#576CBC] text-lg max-w-xl mx-auto">
             Оберіть категорію — і ми підберемо потрібну деталь
           </p>
         </div>
@@ -30,10 +30,10 @@ export default function CatalogGrid({ onCategorySelect }) {
             <button
               key={cat.name}
               onClick={() => handleCategoryClick(cat.name)}
-              className="bg-white rounded-xl p-6 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#2563EB] transition-all text-center group"
+              className="bg-white rounded-xl p-6 border border-[#CFE8F2] shadow-sm hover:shadow-md hover:border-[#576CBC] transition-all text-center group"
             >
               <div className="text-4xl mb-3">{cat.emoji}</div>
-              <p className="font-medium text-[#0F172A] text-sm group-hover:text-[#1E40AF] transition-colors">
+              <p className="font-medium text-[#0B2447] text-sm group-hover:text-[#19376D] transition-colors">
                 {cat.name}
               </p>
             </button>

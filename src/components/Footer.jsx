@@ -9,18 +9,18 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-white">
+    <footer className="bg-[#0B2447] text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
             <div className="text-2xl font-bold mb-3">
-              <span className="text-[#60A5FA]">Auto</span>Parts
+              <span className="text-[#A5D7E8]">Auto</span>Parts
             </div>
-            <p className="text-[#94A3B8] text-sm leading-relaxed">
+            <p className="text-[#A5D7E8] text-sm leading-relaxed">
               Запчастини для іномарок · Бориспіль
             </p>
-            <p className="text-[#94A3B8] text-sm mt-2">EU · USA · JP</p>
+            <p className="text-[#A5D7E8] text-sm mt-2">EU · USA · JP</p>
           </div>
 
           {/* Quick links */}
@@ -31,7 +31,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[#94A3B8] hover:text-white text-sm transition-colors"
+                    className="text-[#A5D7E8] hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href="tel:+380631234567"
-                className="flex items-center gap-3 text-[#94A3B8] hover:text-white text-sm transition-colors"
+                className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"
               >
                 <Phone className="h-4 w-4" />
                 +38 (063) 123-45-67
@@ -55,7 +55,7 @@ export default function Footer() {
                 href="https://t.me/autoparts_boryspil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#94A3B8] hover:text-white text-sm transition-colors"
+                className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"
               >
                 <Send className="h-4 w-4" />
                 Telegram
@@ -64,7 +64,7 @@ export default function Footer() {
                 href="https://instagram.com/autoparts_boryspil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#94A3B8] hover:text-white text-sm transition-colors"
+                className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"
               >
                 <Instagram className="h-4 w-4" />
                 Instagram
@@ -73,8 +73,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#1E293B] pt-6 text-center">
-          <p className="text-[#64748B] text-sm">
+        <div className="border-t border-[#0B2447] pt-6 text-center">
+          <p className="text-[#576CBC] text-sm">
             © 2025 AutoParts. Всі права захищені.
           </p>
         </div>

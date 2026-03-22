@@ -28,10 +28,10 @@ export default function WhyUs() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2447] mb-4">
             Чому обирають нас
           </h2>
-          <p className="text-[#64748B] text-lg max-w-xl mx-auto">
+          <p className="text-[#576CBC] text-lg max-w-xl mx-auto">
             Ми робимо процес пошуку та замовлення запчастин максимально зручним
           </p>
         </div>
@@ -41,13 +41,13 @@ export default function WhyUs() {
             return (
               <div
                 key={item.title}
-                className="bg-[#F8FAFC] rounded-xl p-6 border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow"
+                className="bg-[#F4F9FB] rounded-xl p-6 border border-[#CFE8F2] shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="bg-[#EFF6FF] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="h-6 w-6 text-[#1E40AF]" />
+                <div className="bg-[#E8F4F8] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="h-6 w-6 text-[#19376D]" />
                 </div>
-                <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
+                <h3 className="font-bold text-[#0B2447] mb-2">{item.title}</h3>
+                <p className="text-[#576CBC] text-sm leading-relaxed">{item.description}</p>
               </div>
             )
           })}
