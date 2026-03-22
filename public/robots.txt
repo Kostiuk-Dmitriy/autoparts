@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Kostiuk-Dmitriy.github.io/autoparts/sitemap.xml

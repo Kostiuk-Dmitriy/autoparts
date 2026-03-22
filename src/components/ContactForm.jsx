@@ -33,11 +33,11 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
     const text = encodeURIComponent(
       `Нова заявка!\nІм'я: ${form.name}\nТелефон: ${form.phone}\nАвто: ${form.car}\nДеталь: ${prefilledPart || ''}\nСпосіб зв'язку: ${form.contact}`
     )
-    window.open(`https://t.me/autoparts_boryspil?text=${text}`, '_blank')
+    window.open(`https://t.me/AUTOPARTS_borispol?text=${text}`, '_blank')
   }
 
   return (
-    <section id="contact" className="py-20 bg-[#F4F9FB]">
+    <section id="contact" className="py-24 bg-[#F4F9FB]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2447] mb-4">
@@ -50,7 +50,7 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-[#CFE8F2] shadow-sm">
+          <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-[#A5D7E8]/40 shadow-[0_8px_30px_rgba(11,36,71,0.04)] hover:shadow-[0_8px_30px_rgba(11,36,71,0.08)] transition-shadow">
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-[#0B2447] mb-2">Ім'я</label>
@@ -81,7 +81,7 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
               </div>
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-[#0B2447] mb-2">Марка та модель авто</label>
+              <label className="block text-sm font-medium text-[#0B2447] mb-2">VIN-cod Марка та модель авто</label>
               <input
                 type="text"
                 name="car"
@@ -126,7 +126,7 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#19376D] text-white py-3 rounded-full font-medium hover:bg-[#576CBC] transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-[#19376D] to-[#576CBC] text-white py-4 rounded-full font-bold hover:shadow-lg hover:shadow-[#576CBC]/30 hover:-translate-y-1 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 mt-4"
             >
               <Send className="h-4 w-4" />
               Надіслати заявку
@@ -137,47 +137,47 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
           <div className="flex flex-col gap-4">
             <h3 className="font-bold text-xl text-[#0B2447] mb-2">Зв'яжіться з нами</h3>
             <a
-              href="tel:+380631234567"
-              className="flex items-center gap-4 bg-white rounded-xl p-5 border border-[#CFE8F2] shadow-sm hover:shadow-md hover:border-[#576CBC] transition-all"
+              href="tel:0930934422"
+              className="flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-[#A5D7E8]/40 shadow-[0_4px_16px_rgba(11,36,71,0.02)] hover:shadow-[0_8px_24px_rgba(87,108,188,0.12)] hover:border-[#576CBC] hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="bg-[#E8F4F8] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Phone className="h-6 w-6 text-[#19376D]" />
+              <div className="bg-gradient-to-br from-[#E8F4F8] to-[#CFE8F2] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 shadow-inner">
+                <Phone className="h-6 w-6 text-[#19376D] group-hover:text-[#576CBC] transition-colors" />
               </div>
               <div>
                 <p className="text-xs text-[#576CBC] mb-0.5">Телефон / Viber</p>
-                <p className="font-semibold text-[#0B2447]">+38 (063) 123-45-67</p>
+                <p className="font-semibold text-[#0B2447]">093-093-44-22</p>
               </div>
             </a>
             <a
-              href="https://t.me/autoparts_boryspil"
+              href="https://t.me/AUTOPARTS_borispol"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white rounded-xl p-5 border border-[#CFE8F2] shadow-sm hover:shadow-md hover:border-[#576CBC] transition-all"
+              className="flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-[#A5D7E8]/40 shadow-[0_4px_16px_rgba(11,36,71,0.02)] hover:shadow-[0_8px_24px_rgba(87,108,188,0.12)] hover:border-[#576CBC] hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="bg-[#E8F4F8] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Send className="h-6 w-6 text-[#19376D]" />
+              <div className="bg-gradient-to-br from-[#E8F4F8] to-[#CFE8F2] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-inner">
+                <Send className="h-6 w-6 text-[#19376D] group-hover:text-[#576CBC] transition-colors" />
               </div>
               <div>
                 <p className="text-xs text-[#576CBC] mb-0.5">Telegram</p>
-                <p className="font-semibold text-[#0B2447]">@autoparts_boryspil</p>
+                <p className="font-semibold text-[#0B2447]">@AUTOPARTS_borispol</p>
               </div>
             </a>
             <a
-              href="https://instagram.com/autoparts_boryspil"
+              href="https://www.instagram.com/autoparts_boryspil?igsh=anl0Zjhid2N4Ymk0"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white rounded-xl p-5 border border-[#CFE8F2] shadow-sm hover:shadow-md hover:border-[#576CBC] transition-all"
+              className="flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-[#A5D7E8]/40 shadow-[0_4px_16px_rgba(11,36,71,0.02)] hover:shadow-[0_8px_24px_rgba(87,108,188,0.12)] hover:border-[#576CBC] hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="bg-[#E8F4F8] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Instagram className="h-6 w-6 text-[#19376D]" />
+              <div className="bg-gradient-to-br from-[#E8F4F8] to-[#CFE8F2] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 shadow-inner">
+                <Instagram className="h-6 w-6 text-[#19376D] group-hover:text-[#576CBC] transition-colors" />
               </div>
               <div>
                 <p className="text-xs text-[#576CBC] mb-0.5">Instagram</p>
-                <p className="font-semibold text-[#0B2447]">@autoparts_boryspil</p>
+                <p className="font-semibold text-[#0B2447]">@AUTOPARTS_borispol</p>
               </div>
             </a>
 
-            <div className="mt-4 bg-[#E8F4F8] rounded-xl p-5 border border-[#A5D7E8] space-y-4">
+            <div className="mt-4 bg-gradient-to-br from-[#F4F9FB] to-[#E8F4F8] rounded-3xl p-6 md:p-8 border border-[#A5D7E8]/50 shadow-inner space-y-4">
               <a 
                 href="https://maps.app.goo.gl/knVvwJZSUtPw7veZA"
                 target="_blank"

@@ -45,14 +45,14 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-white">Контакти</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="tel:+380631234567"
+                href="tel:0930934422"
                 className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                +38 (063) 123-45-67
+                093-093-44-22
               </a>
               <a
-                href="https://t.me/autoparts_boryspil"
+                href="https://t.me/AUTOPARTS_borispol"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"
@@ -61,7 +61,7 @@ export default function Footer() {
                 Telegram
               </a>
               <a
-                href="https://instagram.com/autoparts_boryspil"
+                href="https://www.instagram.com/autoparts_boryspil?igsh=anl0Zjhid2N4Ymk0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[#A5D7E8] hover:text-white text-sm transition-colors"

@@ -30,9 +30,9 @@ export default function CatalogGrid({ onCategorySelect }) {
             <button
               key={cat.name}
               onClick={() => handleCategoryClick(cat.name)}
-              className="bg-white rounded-xl p-6 border border-[#CFE8F2] shadow-sm hover:shadow-md hover:border-[#576CBC] transition-all text-center group"
+              className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-[#A5D7E8]/40 shadow-[0_4px_16px_rgba(11,36,71,0.04)] hover:shadow-[0_20px_36px_rgba(87,108,188,0.15)] hover:border-[#576CBC]/40 hover:-translate-y-2 transition-all duration-300 text-center group cursor-pointer active:scale-95"
             >
-              <div className="text-4xl mb-3">{cat.emoji}</div>
+              <div className="text-5xl mb-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300 drop-shadow-sm">{cat.emoji}</div>
               <p className="font-medium text-[#0B2447] text-sm group-hover:text-[#19376D] transition-colors">
                 {cat.name}
               </p>
