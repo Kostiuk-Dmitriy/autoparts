@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Kostiuk-Dmitriy.github.io/autoparts/sitemap.xml
+Sitemap: https://autoparts-boryspil.com.ua/sitemap.xml
