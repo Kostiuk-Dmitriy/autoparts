@@ -24,16 +24,42 @@ export default function ContactForm({ prefilledPart, onPartChange }) {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!PHONE_PATTERN.test(form.phone)) {
       setPhoneError('Введіть коректний номер телефону')
       return
     }
-    const text = encodeURIComponent(
-      `Нова заявка!\nІм'я: ${form.name}\nТелефон: ${form.phone}\nАвто: ${form.car}\nДеталь: ${prefilledPart || ''}\nСпосіб зв'язку: ${form.contact}`
-    )
-    window.open(`https://t.me/AUTOPARTS_borispol?text=${text}`, '_blank')
+
+    const TELEGRAM_TOKEN = "8752085527:AAEkPI5X5kdArOC7Cl1NWhGnC9DQ8rq3PV8";
+    const CHAT_ID = "5157938433";
+    const partText = prefilledPart || form.part || "—";
+
+    const text = 
+      `🔧 <b>Нова заявка — AutoParts Бориспіль</b>\n\n` +
+      `👤 Ім'я: ${form.name}\n` +
+      `📞 Телефон: ${form.phone}\n` +
+      `🚗 Авто: ${form.car}\n` +
+      `🔩 Деталь: ${partText}\n` +
+      `📱 Спосіб зв'язку: ${form.contact}`;
+
+    try {
+      await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: text,
+          parse_mode: "HTML"
+        })
+      });
+      alert("✅ Заявку успішно відправлено!");
+      setForm({ name: '', phone: '', car: '', contact: 'viber' });
+      if (onPartChange) onPartChange('');
+    } catch (error) {
+      console.error(error);
+      alert("❌ Відбулася помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом.");
+    }
   }
 
   return (
